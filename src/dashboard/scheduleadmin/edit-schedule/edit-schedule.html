@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Chỉnh sửa chuyến bay</h2>
+    <form [formGroup]="scheduleForm" (ngSubmit)="editFlight(scheduleForm.value.flightsID)">
+        <div class="form-group">
+            <label for="flightsNumber">Tên chuyến bay:</label>
+            <input id="flightsNumber" formControlName="flightsNumber" placeholder="Nhập tên chuyến bay" required>
+        </div>
+
+        <div class="form-group">
+            <label for="route">Route:</label>
+            <input id="route" formControlName="route" placeholder="Nhập địa điểm đến" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pointOfLoading">Thời gian Đi:</label>
+            <input (change)="onPointOfLoadingChange($event)" type="datetime-local" id="pointOfLoading"
+                formControlName="pointOfLoading" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pointOfUnloading">Thời gian Đến:</label>
+            <input type="datetime-local" id="pointOfUnloading" formControlName="pointOfUnloading" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departure">Thời gian Khởi hành:</label>
+            <input type="datetime-local" id="departure" formControlName="departure" required>
+        </div>
+        <button [disabled]="!scheduleForm.valid" type="submit">Cập nhật</button>
+    </form>
+</div>

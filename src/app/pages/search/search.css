@@ -1,0 +1,85 @@
+        .body {
+            background: linear-gradient(135deg, #ff09b5, #af1919);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bus-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.bus-card:hover {
+    transform: scale(1.02);
+}
+
+.bus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bus-info h5 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.bus-info small {
+    color: #757575; /* Màu xám cho thông tin phụ */
+}
+
+.badge {
+    background-color: #4caf50; /* Màu xanh lá */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.bus-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.bus-details p {
+    margin: 0;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Màu xanh dương đậm khi hover */
+}

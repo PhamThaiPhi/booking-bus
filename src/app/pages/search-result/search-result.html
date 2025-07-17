@@ -1,0 +1,35 @@
+<div class="container">
+    @if(searchData.length === 0) {
+    <div class="alert alert-info text-center">
+        <h4>Không tìm thấy chuyến xe nào phù hợp với yêu cầu của bạn.</h4>
+    </div>
+    <a class="btn btn-secondary" [routerLink]="['/search']">Quay lại tìm kiếm</a>
+    }
+    @for(item of searchData; track $index) {
+    <div class="bus-card">
+        <div class="bus-header">
+            <div class="bus-info">
+                <h5>{{ item.fromLocationName }} - {{ item.toLocationName }}</h5>
+                <small>{{ item.busName }} ({{ item.busVehicleNo }})</small>
+            </div>
+
+        </div>
+        <div class="bus-details">
+            <div>
+                <p>Khởi hành: {{ item.price }}</p>
+                <p>Thời gian: {{ item.departureTime}} - {{item.arrivalTime }}</p>
+                <p>Đến nơi: {{ item.arrivalTime }}</p>
+                <p>vendor: {{item.vendorId}}</p>
+            </div>
+            <div>
+                <h5>{{item.price}}$</h5>
+                <a [routerLink]="'/book-ticket/' + item.scheduleId" class="btn btn-primary w-100">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-secondary" [routerLink]="['/search']">Quay lại tìm kiếm</a>
+    }
+
+</div>

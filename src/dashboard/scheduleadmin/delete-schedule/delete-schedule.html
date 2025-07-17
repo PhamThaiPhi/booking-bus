@@ -1,0 +1,10 @@
+<div *ngIf="flight">
+    <h3>{{ flight.flightsNumber }} - {{ flight.route }}</h3>
+    <p>Thời gian khởi hành: {{ flight.departure }}</p>
+    <p>Thời gian đi: {{ flight.pointOfLoading }}</p>
+    <p>Thời gian đến: {{ flight.pointOfUnloading }}</p>
+    <button (click)="deleteFlight(flight.flightsID)">Xóa chuyến bay</button>
+</div>
+<div *ngIf="!flight">
+    <p>Không tìm thấy chuyến bay.</p>
+</div>

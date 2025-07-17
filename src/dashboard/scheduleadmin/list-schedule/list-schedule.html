@@ -1,0 +1,17 @@
+<div class="container">
+    <a routerLink="/dashboard/scheduleadmin/create-schedule" class="submit-button"
+        style="margin-bottom: 20px; display: inline-block;">Tạo Lịch Trình Mới</a>
+    <h2>Danh Sách Chuyến Bay</h2>
+    <div *ngFor="let schedule of getallSchedulesList" class="schedule-item">
+        <h3>{{ schedule.flightsNumber }} - Route: {{ schedule.route }}</h3>
+        <p><b>Thời gian khởi hành:</b> {{ schedule.departure | date:'short' }}</p>
+        <p><b>Thời gian đi:</b> {{ schedule.pointOfLoading | date:'short' }}</p>
+        <p><b>Thời gian đến:</b> {{ schedule.pointOfUnloading | date:'short' }}</p>
+        <p><b>Giá vé:</b> {{ schedule.price | number }} VNĐ</p>
+        <p><b>Số ghế còn:</b> {{ schedule.availableSeats }}/{{ schedule.totalSeats }}</p>
+        <div>
+            <button class="action-button" (click)="goToEdit(schedule.flightsID)">Chỉnh sửa</button>
+            <button class="action-button" (click)="goToDelete(schedule.flightsID)">Xóa</button>
+        </div>
+    </div>
+</div>

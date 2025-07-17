@@ -1,0 +1,36 @@
+<div class="container">
+    <header class="header">
+        <div>
+            <h1>abc</h1>
+            <p>04-May-25 - 04-May-25 • 08.45 23 - 08.45 23</p>
+        </div>
+        <p class="duration">Duration: 8h 30m</p>
+    </header>
+    <div class="booking-section">
+        <div class="seat-selection">
+            <h2>Select Seats</h2>
+            <div class="seat-status">
+                <div class="available">Available</div>
+                <div class="booked">Booked</div>
+                <div class="selected">Selected</div>
+            </div>
+            <div class="front-label">Front</div>
+            <div class="seats-grid">
+                <div *ngFor="let seat of seats" class="seat" [ngClass]="{
+                        'available': !seat.booked && !seat.selected,
+                        'selected': seat.selected,
+                        'booked': seat.booked
+                    }" (click)="selectSeat(seat)">
+                    {{ seat.number }}
+                </div>
+            </div>
+        </div>
+        <div class="booking-summary">
+            <h2>Booking Summary</h2>
+            <p>Selected Seats: <span *ngIf="selectedSeats.length">{{ selectedSeats.join(', ') }}</span></p>
+            <p *ngIf="!selectedSeats.length">No seats selected</p>
+            <p class="contact-details-label">Contact Details</p>
+            <button class="btn-book" (click)="bookTicket()">Book Ticket</button>
+        </div>
+    </div>
+</div>
